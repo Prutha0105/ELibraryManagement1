@@ -10,6 +10,9 @@
     [Address]       VARCHAR (500) NULL,
     [Password]      NVARCHAR (50) NOT NULL,
     [AccountStatus] VARCHAR (50)  NULL,
-    CONSTRAINT [PK_MemberMaster] PRIMARY KEY CLUSTERED ([MemberId] ASC)
+    [UserId]        NVARCHAR (50) NOT NULL,
+    CONSTRAINT [PK_MemberMaster] PRIMARY KEY CLUSTERED ([MemberId] ASC, [UserId] ASC)
 );
+
+
 

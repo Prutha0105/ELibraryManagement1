@@ -7,7 +7,8 @@
     [IssueDate]   DATE         NULL,
     [DueDate]     DATE         NULL,
     CONSTRAINT [PK_BookIssueMaster] PRIMARY KEY CLUSTERED ([BookIssueId] ASC),
-    CONSTRAINT [FK_BookIssueMaster_BookMaster] FOREIGN KEY ([BookId]) REFERENCES [dbo].[BookMaster] ([BookId]),
-    CONSTRAINT [FK_BookIssueMaster_MemberMaster] FOREIGN KEY ([MemberId]) REFERENCES [dbo].[MemberMaster] ([MemberId])
+    CONSTRAINT [FK_BookIssueMaster_BookMaster] FOREIGN KEY ([BookId]) REFERENCES [dbo].[BookMaster] ([BookId])
 );
+
+
 
