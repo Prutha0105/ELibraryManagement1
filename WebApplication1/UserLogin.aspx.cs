@@ -28,13 +28,13 @@ namespace WebApplication1
                     con.Open();
 
                 }
-                SqlCommand cmd = new SqlCommand("select * from member_master_table where member_id='" + TextBox1.Text.Trim() + "' AND password='" + TextBox2.Text.Trim() + "'", con);
+                SqlCommand cmd = new SqlCommand("select * from MemberMaster where UserId='" + TextBox1.Text.Trim() + "' AND password='" + TextBox2.Text.Trim() + "'", con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {
                     while (dr.Read())
                     {
-                        Response.Write("<script>alert('" + dr.GetValue(8).ToString() + "');</script>");
+                        Response.Write("<script>alert('UserID: " + dr.GetValue(11).ToString() + "');</script>");
                     }
                 }
                 else

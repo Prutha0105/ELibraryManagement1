@@ -9,16 +9,16 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                 
+                                 <center>
                                 <img src="images/adminuser.png" width="150px"/>
-                                 
+                                 </center>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col">
-                                 
+                           <div class="col">
+                                <center>
                                 <h3>Admin Login</h3>
-                                 
+                                </center>
                             </div>
                         </div>
                         <div class="row">
@@ -38,11 +38,9 @@
                                 </div>
 
                                 <div class="form-group">
-                                     
+                                    <center>
                                     <asp:Button ID="Button1" CssClass="btn btn-primary btn-success" runat="server" Text="Login" width="500px" margin="10px" OnClick="Button1_Click"/>
-                                                             
-                                    
-                                         
+                                     </center>
                                    </div>
 
                                 <div class="form-group">

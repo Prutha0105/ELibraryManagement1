@@ -40,9 +40,7 @@
                                 <div class="form-group">
                                     <center>
                                     <asp:Button ID="Button1" CssClass="btn btn-primary btn-success" runat="server" Text="Login" width="500px" margin="10px" OnClick="Button1_Click"/>
-                                                             
-                                    
-                                        </center>
+                                     </center>
                                    </div>
 
                                 <div class="form-group">
