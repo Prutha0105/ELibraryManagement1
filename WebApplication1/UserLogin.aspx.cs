@@ -25,7 +25,7 @@ namespace WebApplication1
                 SqlConnection con = new SqlConnection(strcon);
                 if (con.State == ConnectionState.Closed)
                 { con.Open(); }
-                SqlCommand cmd = new SqlCommand("select * from MemberMaster where MemeberID = '" + TextBox1.Text.Trim() + "' AND Password = '" + TextBox2.Text.Trim() + "'", con);
+                SqlCommand cmd = new SqlCommand("select * from MemberMaster where FullName = '" + TextBox1.Text.Trim() + "' AND Password = '" + TextBox2.Text.Trim() + "'", con);
                 SqlDataReader da = cmd.ExecuteReader();
                 if (da.HasRows)
                 {

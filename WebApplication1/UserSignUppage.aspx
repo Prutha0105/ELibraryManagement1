@@ -38,7 +38,7 @@
                      <div class="col-md-6">
                         <label>Date of Birth</label>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Password" TextMode="Date"></asp:TextBox>
+                           <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Date of Birth" TextMode="Date"></asp:TextBox>
                         </div>
                      </div>
                   </div>
@@ -143,7 +143,7 @@
                      <div class="col-md-6">
                         <label>New Password</label>
                         <div class="form-group">
-                           <asp:TextBox class="form-control" ID="TextBox10" runat="server" placeholder="Email ID" TextMode="Password"></asp:TextBox>
+                           <asp:TextBox class="form-control" ID="TextBox10" runat="server" placeholder="New Password" TextMode="Password"></asp:TextBox>
                         </div>
                      </div>
                   </div>

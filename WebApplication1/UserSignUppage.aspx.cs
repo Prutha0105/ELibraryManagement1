@@ -42,21 +42,23 @@ namespace WebApplication1
                 SqlConnection con = new SqlConnection(strcon);
                 if (con.State == ConnectionState.Closed)
                 { con.Open(); }
-                SqlCommand cmd = new SqlCommand("select * from MemberMaster where memeberid='"+TextBox8.Text.Trim()+"')", con);
+                SqlCommand cmd = new SqlCommand("SELECT * from MemberMaster where UserId='" + TextBox8.Text.Trim() + "';", con);
+               // SqlCommand cmd = new SqlCommand("select * from MemberMaster where UserId='" + TextBox8.Text.Trim()+ "')", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                if (dt.Rows.Count > 0)
+                if (dt.Rows.Count >=1)
                 {
                     return true;
+                    
                 }
                 else
                 {
                     return false;
                 }
                 con.Close();
-                //Console.WriteLine("test");
-                //Response.Write("<script>alert('Sign Up Successful. Go to User Login to Login');</script>");
+                
+               
             }
             catch (Exception ex)
             {
@@ -73,7 +75,7 @@ namespace WebApplication1
                 if (con.State == ConnectionState.Closed)
                 { con.Open(); }
 
-                SqlCommand cmd = new SqlCommand("insert into MemberMaster (Name,DOB,ContactNo,Email,State,City,Pincode,Address,MemeberID,Password,AccountStatus) values(@full_name,@dob,@contact_no,@email,@state,@city,@pincode,@full_address,@member_id,@password,@account_status)", con);
+                SqlCommand cmd = new SqlCommand("insert into MemberMaster(FullName,DOB,ContactNumber,Email,State,City,Pincode,Address,UserId,Password,AccountStatus) values(@full_name,@dob,@contact_no,@email,@state,@city,@pincode,@full_address,@member_id,@password,@account_status)", con);
                 cmd.Parameters.AddWithValue("@full_name", TextBox1.Text.Trim());
                 cmd.Parameters.AddWithValue("@dob", TextBox2.Text.Trim());
                 cmd.Parameters.AddWithValue("@contact_no", TextBox3.Text.Trim());
