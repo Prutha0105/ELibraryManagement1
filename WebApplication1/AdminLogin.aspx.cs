@@ -26,13 +26,13 @@ namespace WebApplication1
                 SqlConnection con = new SqlConnection(strcon);
                 if (con.State == ConnectionState.Closed)
                 { con.Open(); }
-                SqlCommand cmd = new SqlCommand("select * from AdminMAster where Username = '" + TextBox1.Text.Trim() + "' AND Password = '" + TextBox2.Text.Trim() + "'", con);
+                SqlCommand cmd = new SqlCommand("select * from AdminLogin where Username = '" + TextBox1.Text.Trim() + "' AND Password = '" + TextBox2.Text.Trim() + "'", con);
                 SqlDataReader da = cmd.ExecuteReader();
                 if (da.HasRows)
                 {
                     while (da.Read())
                     {
-                        Response.Write("<script>alert('" + da.GetValue(2).ToString() + "');</script>");
+                        Response.Write("<script>alert('Admin Name: " + da.GetValue(1).ToString() + "');</script>");
                     }
 
                 }

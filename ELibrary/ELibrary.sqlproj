@@ -66,5 +66,6 @@
     <Build Include="dbo\Tables\BookIssueMaster.sql" />
     <Build Include="dbo\Tables\AuthorMaster.sql" />
     <Build Include="dbo\Tables\AdminLogin.sql" />
+    <Build Include="dbo\Tables\State.sql" />
   </ItemGroup>
 </Project>

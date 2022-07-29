@@ -24,24 +24,29 @@ namespace WebApplication1
             {
                 SqlConnection con = new SqlConnection(strcon);
                 if (con.State == ConnectionState.Closed)
-                { con.Open(); }
-                SqlCommand cmd = new SqlCommand("select * from MemberMaster where FullName = '" + TextBox1.Text.Trim() + "' AND Password = '" + TextBox2.Text.Trim() + "'", con);
-                SqlDataReader da = cmd.ExecuteReader();
-                if (da.HasRows)
                 {
-                    while (da.Read())
-                    {
-                        Response.Write("<script>alert('" + da.GetValue(8).ToString() + "');</script>");
+                    con.Open();
 
+                }
+                SqlCommand cmd = new SqlCommand("select * from MemberMaster where UserId='" + TextBox1.Text.Trim() + "' AND password='" + TextBox2.Text.Trim() + "'", con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        Response.Write("<script>alert('Login Successfull!');</script>");
+                        Session["UserName"] = dr.GetValue(11).ToString();
+                        Session["FullName"]= dr.GetValue(1).ToString();
+                        Session["Role"] = "user";
+                        Session["Status"] = dr.GetValue(10).ToString();
                     }
-             
+                    Response.Redirect("Home.aspx");
                 }
                 else
                 {
-                    Response.Write("<script>alert('Invalid User');</script>");
+                    Response.Write("<script>alert('Invalid credentials');</script>");
                 }
-                con.Close();
-             }
+            }
             catch (Exception ex)
             {
                 Response.Write("<script>alert('" + ex.Message + "');</script>");

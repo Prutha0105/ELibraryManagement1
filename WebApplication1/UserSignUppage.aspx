@@ -61,7 +61,7 @@
                         <label>State</label>
                         <div class="form-group">
                            <asp:DropDownList class="form-control" ID="DropDownList1" runat="server">
-                              <asp:ListItem Text="Select" Value="select" />
+                             <%-- <asp:ListItem Text="Select" Value="select" />
                               <asp:ListItem Text="Andhra Pradesh" Value="Andhra Pradesh" />
                               <asp:ListItem Text="Arunachal Pradesh" Value="Arunachal Pradesh" />
                               <asp:ListItem Text="Assam" Value="Assam" />
@@ -91,7 +91,7 @@
                               <asp:ListItem Text="Tripura" Value="Tripura" />
                               <asp:ListItem Text="Uttar Pradesh" Value="Uttar Pradesh" />
                               <asp:ListItem Text="Uttarakhand" Value="Uttarakhand" />
-                              <asp:ListItem Text="West Bengal" Value="West Bengal" />
+                              <asp:ListItem Text="West Bengal" Value="West Bengal" />--%>
                            </asp:DropDownList>
                         </div>
                      </div>

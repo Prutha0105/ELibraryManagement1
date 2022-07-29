@@ -15,7 +15,16 @@ namespace WebApplication1
         String strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            SqlConnection con = new SqlConnection(strcon);
+            string com = "Select * from State ORDER BY StateName";
+            SqlDataAdapter adpt = new SqlDataAdapter(com, con);
+            DataTable dt = new DataTable();
+            adpt.Fill(dt);
+            DropDownList1.DataSource = dt;
+            DropDownList1.DataBind();
+            DropDownList1.DataTextField = "StateName";
+            DropDownList1.DataValueField = "StateId";
+            DropDownList1.DataBind();
         }
         //sign up button click event start
         protected void Button1_Click(object sender, EventArgs e)
