@@ -62,7 +62,7 @@ namespace WebApplication1
                 }
                
             }
-            catch(Exception ex) { }
+            catch(Exception ex) {  }
         }
 
         protected void LinkButton1_Click(object sender, EventArgs e)
