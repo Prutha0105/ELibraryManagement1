@@ -32,8 +32,13 @@ namespace WebApplication1
                 {
                     while (da.Read())
                     {
-                        Response.Write("<script>alert('Admin Name: " + da.GetValue(1).ToString() + "');</script>");
+                        Response.Write("<script>alert('Login Successfull!');</script>");
+                        Session["AdminName"] = da.GetValue(0).ToString();
+                        Session["FullName"] = da.GetValue(2).ToString();
+                        Session["Role"] = "admin";
+                        //Session["Status"] = da.GetValue(10).ToString();
                     }
+                    Response.Redirect("Home.aspx");
 
                 }
                 else

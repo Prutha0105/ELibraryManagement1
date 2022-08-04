@@ -33,7 +33,7 @@
                         <div class="form-group">
                             <div class="input-group">
                            <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="ID"></asp:TextBox>
-                             <asp:Button class="btn btn-danger btn-block btn-lg" ID="Button4" runat="server" Text="Go" />
+                             <asp:Button class="btn btn-danger btn-block btn-lg" ID="Button4" runat="server" Text="Go" OnClick="Button4_Click" />
                         </div>
                             </div>
 
