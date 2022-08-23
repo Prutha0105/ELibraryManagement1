@@ -80,6 +80,7 @@ namespace WebApplication1
                 con.Close();
                 Console.WriteLine("test");
                 Response.Write("<script>alert('Author Id added Successfully..!!');</script>");
+                clearForm();
             }
             catch (Exception ex)
             {
@@ -102,6 +103,7 @@ namespace WebApplication1
                 con.Close();
                 Console.WriteLine("test");
                 Response.Write("<script>alert('Author Id Deleted Successfully..!!');</script>");
+                clearForm();
             }
             catch (Exception ex)
             {
@@ -124,6 +126,7 @@ namespace WebApplication1
                 con.Close();
                 Console.WriteLine("test");
                 Response.Write("<script>alert('Author Id Updated Successfully..!!');</script>");
+                clearForm();
             }
             catch (Exception ex)
             {
@@ -131,6 +134,11 @@ namespace WebApplication1
             }
         }
 
+        void clearForm()
+        {
+            TextBox1.Text = "";
+            TextBox2.Text = "";
+        }
         protected void Button4_Click(object sender, EventArgs e)
         {
 
@@ -159,6 +167,16 @@ namespace WebApplication1
             {
                 Response.Write("<script>alert('Author Id not exists. Add Author first then delete.!!');</script>");
             }
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
         }
     }
 }
